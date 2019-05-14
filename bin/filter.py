@@ -13,8 +13,9 @@ filename = "./bin/debuglog.log"
 debugFile = open(filename, 'w')
 
 def p(thing):
-  debugFile.write(thing.encode('utf8'))
-  debugFile.write("\n")
+  pass
+  # debugFile.write(thing.encode('utf8'))
+  # debugFile.write("\n")
 
 def latex(s):
     return RawBlock('latex', s)
