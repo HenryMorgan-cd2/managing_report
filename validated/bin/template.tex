@@ -1,0 +1,200 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode$for(hyperrefoptions)$,$hyperrefoptions$$endfor$}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+$if(colorlinks)$
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+$endif$
+$if(dir)$
+$if(latex-dir-rtl)$
+\PassOptionsToPackage{RTLdocument}{bidi}
+$endif$
+$endif$
+%
+\documentclass[a4paper, 11pt]{article}
+$if(beamer)$
+$if(background-image)$
+\usebackgroundtemplate{%
+  \includegraphics[width=\paperwidth]{$background-image$}%
+}
+$endif$
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbols$if(navigation)$$navigation$$else$empty$endif$
+$for(beameroption)$
+\setbeameroption{$beameroption$}
+$endfor$
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+$if(section-titles)$
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+$endif$
+$endif$
+
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+\usepackage{multicol}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+\usepackage{fullpage} % changes the margin
+
+\usepackage{titlesec}
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+
+\usepackage{float}
+
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][2] {
+    \expandafter\origfigure\expandafter[H]
+} {
+    \endorigfigure
+}
+
+\definecolor{noteQuoteLine}{RGB}{224,215,188}
+\definecolor{noteQuoteBackground}{RGB}{249,245,233}
+
+\newcommand{\noteBorder}[2]{
+  \begingroup
+  {\color{#2}\hrule}%
+  \color{#1}%
+  {\color{#2}\hrule}%
+  \endgroup
+} %
+
+\newsavebox{\coloredquotationbox}
+
+\newenvironment{noteQuote}
+ {%
+  \begin{trivlist}
+  \begin{lrbox}{\coloredquotationbox}
+  \begin{minipage}{\dimexpr\linewidth-2\fboxsep}
+ }
+ {%
+  \end{minipage}
+  \end{lrbox}
+  \item\relax
+  \parbox{\linewidth}{
+    \noteBorder{noteQuoteBackground}{noteQuoteLine}
+    \colorbox{noteQuoteBackground}{\usebox{\coloredquotationbox}}\par\nointerlineskip
+    \noteBorder{noteQuoteBackground}{noteQuoteLine}
+  }
+  \end{trivlist}
+ }
+
+
+\definecolor{commentQuoteLine}{RGB}{179,179,179}
+\definecolor{commentQuoteBackground}{RGB}{239,240,241}
+
+\newenvironment{commentQuote}
+ {%
+  \begin{trivlist}
+  \begin{lrbox}{\coloredquotationbox}
+  \begin{minipage}{\dimexpr\linewidth-2\fboxsep}
+  \itshape
+ }
+ {%
+\end{minipage}
+\end{lrbox}
+\item\relax
+\parbox{\linewidth}{
+   \noteBorder{commentQuoteBackground}{commentQuoteLine}
+   \colorbox{commentQuoteBackground}{\usebox{\coloredquotationbox}}\par\nointerlineskip
+   \noteBorder{commentQuoteBackground}{commentQuoteLine}
+  }
+  \end{trivlist}
+ }
+
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+% CUSTOM STUFF
+
+\usepackage{enumitem}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\usepackage{longtable,booktabs}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcommand{\hypertarget}{}
+% \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\begin{document}
+
+\noindent
+\large\textbf{Report 2 - Experience} \hfill  \\
+\normalsize 17COD280 - Due on 17th May 2018, 4PM\hfill\textbf{Henry Morgan} \\
+Module Leader: Andrea Soltoggio 
+\hfill Student ID: B526505
+
+$body$
+
+\end{document}
